@@ -78,6 +78,12 @@ type (
 		// DevURL is the URL of the database to use for normalization and calculations.
 		// If not specified, the operator will spin up a temporary database container to use for these operations.
 		DevURL string `json:"devURL"`
+		// DevLabels is a set of labels to apply to the temporary database container.
+		// +optional
+		DevLabels map[string]string `json:"devLabels,omitempty"`
+		// DevAnnotations is a set of annotations to apply to the temporary database container.
+		// +optional
+		DevAnnotations map[string]string `json:"devAnnotations,omitempty"`
 		// DevURLFrom is a reference to a secret containing the URL of the database to use for normalization and calculations.
 		// +optional
 		DevURLFrom Secret `json:"devURLFrom,omitempty"`

@@ -75,6 +75,12 @@ type (
 		// DevURLFrom is a reference to a secret containing the URL of the database to use for normalization and calculations.
 		// +optional
 		DevURLFrom Secret `json:"devURLFrom,omitempty"`
+		// DevLabels is a set of labels to apply to the temporary database container.
+		// +optional
+		DevLabels map[string]string `json:"devLabels,omitempty"`
+		// DevAnnotations is a set of annotations to apply to the temporary database container.
+		// +optional
+		DevAnnotations map[string]string `json:"devAnnotations,omitempty"`
 		// RevisionsSchema defines the schema that revisions table resides in
 		RevisionsSchema string `json:"revisionsSchema,omitempty"`
 		// BaselineVersion defines the baseline version of the database on the first migration.
